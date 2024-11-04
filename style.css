@@ -1,0 +1,21 @@
+@import "./components/mainHeader/mainHeader.css";
+@import "./components/mainFotter/mainFotter.css";
+
+
+*
+{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+   
+}
+
+.show 
+{
+    visibility:visible;
+}
+
+.hidden 
+{
+    visibility: hidden;
+}

@@ -1,0 +1,91 @@
+* 
+{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+.album__saerch__cart 
+{
+ 
+    width: 400px;
+    height: 550px;
+    margin: 15px;
+}
+
+.img__holder 
+{
+    position: relative;
+   
+}
+
+.img_global 
+{
+    width: 200px;
+}
+
+.img_set_one 
+{
+    height: 150px;
+    position: relative;
+    left: 0px;
+    bottom: -50px;
+    rotate: -10deg;
+}
+
+.img_set_two
+{
+    height: 150px;
+    position: relative;
+    left: 70px;
+    bottom: -10px;
+    rotate: 15deg;
+
+}
+
+.img_set_three 
+{
+    height: 150px;
+    position: relative;
+    left: -80px;
+    bottom: 100px;
+    rotate: -20deg;
+}
+
+.img_set_four 
+{
+    height: 150px;
+    position: relative;
+    left: 20px;
+    bottom: 170px;
+    rotate: 10deg;
+}
+
+
+
+.info__holder 
+{
+    position: relative;
+}
+
+.info__holder center 
+{
+    position: relative;
+    bottom: 150px;
+}
+
+
+.btn__view__album 
+{
+    width: 150px;
+    height: 30px;
+    background-color: white;
+    align-items: center;
+    border-radius: 15px;
+    border : 1px solid black;
+}
+
+.btn__view__album:hover 
+{
+    background-color: rgb(205, 205, 205);
+}

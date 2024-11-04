@@ -1,0 +1,23 @@
+.site__footer {
+    width: 100vw;
+    height: 30px;
+    background-color: black;
+
+    position: fixed;
+    bottom: 0;
+       z-index: 5;
+}
+
+.site__footer p {
+    color: white;
+
+    font-family: "Aboreto", system-ui;
+    font-weight: 600;
+    font-style: normal;
+    font-size: 10px;
+}
+
+.fotter__icon__div I {
+
+    margin-left: 10px;
+}

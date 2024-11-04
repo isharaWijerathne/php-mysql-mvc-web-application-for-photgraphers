@@ -1,0 +1,122 @@
+* 
+{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+    
+}
+
+.package__cart 
+{
+    margin: 55px;
+    width: 300px;
+    height: 532px;
+    background-color: wheat;
+    border-radius: 15px;
+
+    padding: 10px;
+    position: relative;
+}
+
+.package__header 
+{
+    text-align: center;
+    font-size: 25px;
+
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2; 
+            line-clamp: 2; 
+    -webkit-box-orient: vertical;
+
+}
+.package__price 
+{
+    text-align: center;
+    font-weight: bold;
+}
+
+
+.package__img__container 
+{
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.package__img__one 
+{
+    width: 200px;
+    z-index: 2;
+    rotate: -10deg;
+}
+
+.package__img__two 
+{
+    width: 200px;
+    z-index: 1;
+    position: relative;
+    top: -45px;
+    rotate: -30deg;
+}
+
+.package__tag 
+{
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.package__btn 
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    border: none;
+    height: 40px;
+    width: 250px;
+    border-radius: 15px;
+}
+
+.package__btn:hover 
+{
+    background-color: rgb(165, 133, 198);
+}
+
+.package__discount 
+{
+
+     width: 200px; 
+    aspect-ratio: 1;
+    --g:/12.458% 12.458% radial-gradient(#000 calc(71% - 1px),#0000 71%) no-repeat;
+    mask: 100% 50.143% var(--g),97.934% 64.224% var(--g),91.985% 77.152% var(--g),82.635% 87.881% var(--g),70.641% 95.541% var(--g),56.974% 99.511% var(--g),42.743% 99.471% var(--g),29.099% 95.422% var(--g),17.149% 87.694% var(--g),7.86% 76.912% var(--g),1.985% 63.95% var(--g),0% 49.857% var(--g),2.066% 35.776% var(--g),8.015% 22.848% var(--g),17.365% 12.119% var(--g),29.359% 4.459% var(--g),43.026% 0.489% var(--g),57.257% 0.529% var(--g),70.901% 4.578% var(--g),82.851% 12.306% var(--g),92.14% 23.088% var(--g),98.015% 36.05% var(--g),radial-gradient(100% 100%,#000 43.325%,#0000 calc(43.325% + 1px));
+    
+    width: 60px;
+    height: 60px;
+    
+    background-color: rgb(216, 142, 86);
+    padding: 5px;
+
+    position: absolute;
+    z-index: 2;
+    left: 270px;
+    border-radius: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.package__discount__header 
+{
+    color: white;
+    font-weight: bold;    
+    margin: 5px;
+}
+
+body {
+    background-color: pink;
+    display: flex;
+    justify-content: center;
+}
