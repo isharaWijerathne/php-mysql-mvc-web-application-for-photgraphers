@@ -23,7 +23,18 @@
           </a>
           <ul class="dropdown-menu">
             <li><a class="dropdown-item" href="<?php echo "../../admin/picture-album/create-new.php";?>">Create New Picture Album</a></li>
-            <li><a class="dropdown-item" href="#">y</a></li>
+            <li><a class="dropdown-item" href="<?php echo "../../admin/picture-album/view-album-list.php";?>">View Picture Album</a></li>
+          </ul>
+        </li>
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Packages
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="<?php echo "../../admin/package/create-new-package.php";?>">Create New Package</a></li>
+            <li><a class="dropdown-item" href="<?php echo "../../admin/package/package-details.php";?>">Package Details</a></li>
+            
           </ul>
         </li>
        

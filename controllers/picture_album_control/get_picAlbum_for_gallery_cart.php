@@ -13,6 +13,8 @@ $get_ablum_details_query = "SELECT
                                 tblpiccollection
                             JOIN 
                                 tblpiccategory ON tblpiccollection.picCategoryId = tblpiccategory.picCategoryId
+                            WHERE
+                             	tblpiccollection.isPublish = true
 ";
 
 
