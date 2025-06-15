@@ -1,8 +1,8 @@
 <?php
 require("../../include/cdn.php");
-    require("../../components/mainHeader/mainHeader.php");
+require("../../components/mainHeader/mainHeader.php");
 
-    require("../../components/mainFotter/mainFotter.php");
+require("../../components/mainFotter/mainFotter.php");
 
     //This import will provide AlbumCart function
     require("../../components/AlbumCart/AlbumCart.php");
@@ -21,9 +21,11 @@ require("../../include/cdn.php");
         $data_for_pic_cart[$first]["header"] = $result['mainHeader'];
 
          $second = 0;
+        
             while($result_innder = mysqli_fetch_assoc($get_pic_details)){
 
                 if(  $result['picCollectionId'] == $result_innder["picCollectionId"] ){
+                    
                     //echo $result_innder['picPath'];
                     //echo " <img src= '{$result_innder['picPath']}' />";
                     
@@ -39,7 +41,7 @@ require("../../include/cdn.php");
         $first ++;;
     }
 
-       // print_r($data_for_pic_cart);
+        //print_r($data_for_pic_cart);
 
        echo "<div class='container-fluid'>
        <div class='row'> ";
@@ -52,7 +54,8 @@ require("../../include/cdn.php");
                 $value["img_2"],
                 $value["img_3"],
                 $value['pic_cat'],
-                $value['header']
+                $value['header'],
+                preg_match('/PCT-\d{5}/', $value["img_3"], $m) ? $m[0] : null
             );
             echo "</div>";
 

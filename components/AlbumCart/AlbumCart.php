@@ -5,7 +5,7 @@
 
 
     <?php 
-        function AlbumCart($img_url_1,$img_url_2,$img_url_3,$img_url_4,$pic_cat,$album_header) :void    
+        function AlbumCart($img_url_1,$img_url_2,$img_url_3,$img_url_4,$pic_cat,$album_header,$picCollectionId) :void    
         {
             echo "
             <div class='album__saerch__cart'>
@@ -21,7 +21,7 @@
                     <center>
                         <h2>{$pic_cat}</h2>
                         <p>{$album_header}</p>
-                        <div class='btn__view__album'>View Album</div>
+                        <a href='/hnd/public/gallery/show.php?id=${picCollectionId}' class='btn__view__album' >View Album</a>
                     </center>
             </div>
         

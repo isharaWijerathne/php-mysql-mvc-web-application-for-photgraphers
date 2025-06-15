@@ -83,6 +83,10 @@
     align-items: center;
     border-radius: 15px;
     border : 1px solid black;
+
+    text-decoration: none;
+    color: black;
+    padding: 5px;
 }
 
 .btn__view__album:hover 

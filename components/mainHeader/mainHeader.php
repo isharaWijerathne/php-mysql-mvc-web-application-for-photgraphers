@@ -10,7 +10,7 @@
             <a href="/hnd/public/gallery/index.php">Gallery</a>
         </li>
         <li>
-            <a href="">My Packages</a>
+            <a href="/hnd/public/my-packages/index.php">My Packages</a>
         </li>
         <li>
             <a href="">Book Your Day</a>
