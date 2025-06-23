@@ -17,6 +17,7 @@ require("../../components/AdminHeader/index.php");
 
     <div class="card shadow-sm border-0 rounded-4 p-4 mt-4 mx-auto" style="max-width: 700px;">
         <h3 class="text-center text-primary mb-4 fw-bold">Create New Package</h3>
+        
 
         <form method="post" action="../../controllers/package_control/create_package.php" class="row g-3">
 

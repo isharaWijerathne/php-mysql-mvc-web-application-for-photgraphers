@@ -6,7 +6,8 @@ require("../../include/cdn.php");
 require("../../components/AdminHeader/index.php");
 ?>
 
-<h1 class="text-center my-4">Create New Picture Category</h1>
+
+<h3 class="text-center text-primary mb-4 fw-bold">Create New Picture Category</h3>
 
 <div class="container">
 

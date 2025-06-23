@@ -11,7 +11,7 @@ if(isset($_GET['id']))
 
 
     $get_picture_query = " SELECT * FROM `tblpic` WHERE 
-                            tblpic.picCollectionId = '${pic_album_id}'";
+                            tblpic.picCollectionId = '${pic_album_id}' AND tblpic.isPublish = true ";
     $get_picture_result = mysqli_query($connection,$get_picture_query);
     
 }

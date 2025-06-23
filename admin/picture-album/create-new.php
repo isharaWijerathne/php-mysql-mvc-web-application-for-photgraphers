@@ -6,7 +6,7 @@ require("../../include/cdn.php");
 require("../../components/AdminHeader/index.php");
 ?>
 
-<h3 class="text-center mb-5">Create New Pic Album</h3>
+<h3 class="text-center text-primary mb-4 fw-bold">Create New Pic Album</h3>
 
 <div class="container-fluid">
   <div class="row">

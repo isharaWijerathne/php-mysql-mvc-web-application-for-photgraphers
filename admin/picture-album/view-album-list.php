@@ -6,7 +6,7 @@ require("../../include/cdn.php");
 require("../../components/AdminHeader/index.php");
 ?>
 
-<h3 class="text-center mb-5">View Picture Album</h3>
+<h3 class="text-center text-primary mb-4 fw-bold">View Picture Album</h3>
 
 <div class="container mb-4">
     <?php 
@@ -34,6 +34,20 @@ require("../../components/AdminHeader/index.php");
         if(isset($_COOKIE['delete_categort_success']) && $_COOKIE['delete_categort_success'] == true){
             echo '<div class="alert alert-danger alert-dismissible fade show" role="alert" id="server_msg">
                     Product Category Deleted Successfully
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                  </div>';
+        }
+
+         if(isset($_COOKIE['delete_album_success']) && $_COOKIE['delete_album_success'] == true){
+            echo '<div class="alert alert-danger alert-dismissible fade show" role="alert" id="server_msg">
+                    Product Category Deleted Successfully
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                  </div>';
+        }
+
+         if(isset($_COOKIE['delete_album_success']) && $_COOKIE['delete_album_success'] == false){
+            echo '<div class="alert alert-danger alert-dismissible fade show" role="alert" id="server_msg">
+                    Please Try Again !
                     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                   </div>';
         }
@@ -81,7 +95,7 @@ require("../../components/AdminHeader/index.php");
                     }
 
                     echo "<td>
-                            <button id='btn-delete' value='{$result['picCategoryId']}' class='btn btn-danger btn-sm btn-delete'>Delete</button>
+                            <button id='btn-delete' value='{$result['picCollectionId']}' class='btn btn-danger btn-sm btn-delete '>Delete</button>
                           </td>";
 
                     echo "<td>
@@ -95,5 +109,5 @@ require("../../components/AdminHeader/index.php");
         </table>
     </div>
 </div>
-
-<script src="view-album-list.js"></script>
+<div id="msg__box__div"></div>
+<script type="module" src="view-album-list.js"></script>
