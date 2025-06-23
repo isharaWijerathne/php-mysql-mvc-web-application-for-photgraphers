@@ -1,8 +1,22 @@
-<?php
-require("../../include/cdn.php");
-require("../../components/mainHeader/mainHeader.php");
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery</title>
+</head>
+<style>
+    body 
+    {
+        overflow-x: hidden;
+    }
+</style>
+<body>
+    <?php
+    require("../../include/cdn.php");
+    require("../../components/mainHeader/mainHeader.php");
 
-require("../../components/mainFotter/mainFotter.php");
+    require("../../components/mainFotter/mainFotter.php");
 
     //This import will provide AlbumCart function
     require("../../components/AlbumCart/AlbumCart.php");
@@ -47,16 +61,16 @@ require("../../components/mainFotter/mainFotter.php");
        <div class='row'> ";
 
         foreach ($data_for_pic_cart as $value) {
-            echo "<div class='col-sm'>";
-            AlbumCart(
-                $value["img_0"],
-                $value["img_1"],
-                $value["img_2"],
-                $value["img_3"],
-                $value['pic_cat'],
-                $value['header'],
-                preg_match('/PCT-\d{5}/', $value["img_3"], $m) ? $m[0] : null
-            );
+            echo "<div class='col-12 col-sm-12 col-md-6 col-lg-4 d-flex justify-content-center'>";
+                AlbumCart(
+                    $value["img_0"],
+                    $value["img_1"],
+                    $value["img_2"],
+                    $value["img_3"],
+                    $value['pic_cat'],
+                    $value['header'],
+                    preg_match('/PCT-\d{5}/', $value["img_3"], $m) ? $m[0] : null
+                );
             echo "</div>";
 
         }
@@ -66,4 +80,6 @@ require("../../components/mainFotter/mainFotter.php");
        
       
 
-   
+   ?>
+</body>
+</html>
