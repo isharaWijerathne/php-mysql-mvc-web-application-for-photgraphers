@@ -6,8 +6,7 @@
     <title>Gallery</title>
 </head>
 <style>
-    body 
-    {
+    body {
         overflow-x: hidden;
     }
 </style>
@@ -18,68 +17,77 @@
 
     require("../../components/mainFotter/mainFotter.php");
 
-    //This import will provide AlbumCart function
+    // This import will provide AlbumCart function
     require("../../components/AlbumCart/AlbumCart.php");
 
-  
-    //this import provide get_album_details & get_pic_details
+    // This import provides get_album_details & get_pic_details
     require("../../controllers/picture_album_control/get_picAlbum_for_gallery_cart.php");
 
     $data_for_pic_cart = [];
     $first = 0;
-    while($result = mysqli_fetch_assoc($get_ablum_details)){
-        
+
+    while ($result = mysqli_fetch_assoc($get_ablum_details)) {
         mysqli_data_seek($get_pic_details, 0);
 
         $data_for_pic_cart[$first]["pic_cat"] = $result["categoryName"];
         $data_for_pic_cart[$first]["header"] = $result['mainHeader'];
 
-         $second = 0;
-        
-            while($result_innder = mysqli_fetch_assoc($get_pic_details)){
-
-                if(  $result['picCollectionId'] == $result_innder["picCollectionId"] ){
-                    
-                    //echo $result_innder['picPath'];
-                    //echo " <img src= '{$result_innder['picPath']}' />";
-                    
-                    $data_for_pic_cart[$first]["img_".$second] = $result_innder['picPath'];
-
-                    $second ++;
-                }
-
-                
-            }
-
         $second = 0;
-        $first ++;;
+
+        while ($result_inner = mysqli_fetch_assoc($get_pic_details)) {
+            if ($result['picCollectionId'] == $result_inner["picCollectionId"]) {
+                $data_for_pic_cart[$first]["img_" . $second] = $result_inner['picPath'];
+                $second++;
+            }
+        }
+
+        $first++;
     }
 
-        //print_r($data_for_pic_cart);
+    // ===== Pagination Logic =====
+    $items_per_page = 4;
+    $total_items = count($data_for_pic_cart);
+    $total_pages = ceil($total_items / $items_per_page);
 
-       echo "<div class='container-fluid'>
-       <div class='row'> ";
+    $current_page = isset($_GET['page']) ? (int)$_GET['page'] : 1;
+    $current_page = max(1, min($current_page, $total_pages));
 
-        foreach ($data_for_pic_cart as $value) {
-            echo "<div class='col-12 col-sm-12 col-md-6 col-lg-4 d-flex justify-content-center'>";
-                AlbumCart(
-                    $value["img_0"],
-                    $value["img_1"],
-                    $value["img_2"],
-                    $value["img_3"],
-                    $value['pic_cat'],
-                    $value['header'],
-                    preg_match('/PCT-\d{5}/', $value["img_3"], $m) ? $m[0] : null
-                );
-            echo "</div>";
+    $start_index = ($current_page - 1) * $items_per_page;
+    $data_for_pic_cart_paginated = array_slice($data_for_pic_cart, $start_index, $items_per_page);
 
-        }
-   
-        echo "</div>
+    // ===== Display Albums =====
+    echo "<div class='container-fluid'>
+            <div class='row'>";
+
+    foreach ($data_for_pic_cart_paginated as $value) {
+        echo "<div class='col-12 col-sm-12 col-md-6 col-lg-4 d-flex justify-content-center'>";
+        AlbumCart(
+            $value["img_0"] ?? "",
+            $value["img_1"] ?? "",
+            $value["img_2"] ?? "",
+            $value["img_3"] ?? "",
+            $value['pic_cat'],
+            $value['header'],
+            preg_match('/PCT-\d{5}/', $value["img_3"] ?? "", $m) ? $m[0] : null
+        );
+        echo "</div>";
+    }
+
+    echo "</div></div>";
+
+    // ===== Pagination Controls =====
+    echo "<div class='d-flex justify-content-center mt-4'>
+            <nav>
+                <ul class='pagination'>";
+
+    for ($i = 1; $i <= $total_pages; $i++) {
+        $active = ($i === $current_page) ? "active" : "";
+        echo "<li class='page-item $active'><a class='page-link' href='?page=$i'>$i</a></li>";
+    }
+
+    echo "  </ul>
+            </nav>
         </div>";
-       
-      
-
-   ?>
+    ?>
 </body>
 </html>
