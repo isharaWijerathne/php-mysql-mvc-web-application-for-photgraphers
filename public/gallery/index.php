@@ -8,6 +8,8 @@
 <style>
     body {
         overflow-x: hidden;
+        background-image: linear-gradient(to top, #ff0844 0%, #ffb199 100%);
+
     }
 </style>
 <body>

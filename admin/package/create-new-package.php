@@ -18,12 +18,15 @@ require("../../components/AdminHeader/index.php");
     <div class="card shadow-sm border-0 rounded-4 p-4 mt-4 mx-auto" style="max-width: 700px;">
         <h3 class="text-center text-primary mb-4 fw-bold">Create New Package</h3>
         
-
-        <form method="post" action="../../controllers/package_control/create_package.php" class="row g-3">
+        <form method="post" 
+              action="../../controllers/package_control/create_package.php" 
+              class="row g-3 needs-validation" 
+              novalidate>
 
             <div class="col-12">
                 <label for="packageHeader" class="form-label fw-semibold">Package Header <span class="text-danger">*</span></label>
                 <input type="text" class="form-control form-control-lg" id="packageHeader" name="package_header" required placeholder="Enter package header">
+                <div class="invalid-feedback">Please enter a package header.</div>
             </div>
 
             <div class="col-12">
@@ -58,8 +61,9 @@ require("../../components/AdminHeader/index.php");
             </div>
 
             <div class="col-md-6">
-                <label for="price" class="form-label fw-semibold">Price</label>
-                <input type="number" min="0" step="0.01" class="form-control form-control-lg" id="price" name="price" placeholder="Enter price">
+                <label for="price" class="form-label fw-semibold">Price <span class="text-danger">*</span></label>
+                <input type="number" min="0" step="0.01" class="form-control form-control-lg" id="price" name="price" required placeholder="Enter price">
+                <div class="invalid-feedback">Please enter a valid price.</div>
             </div>
 
             <div class="col-md-6 d-flex align-items-end justify-content-end">
@@ -73,7 +77,7 @@ require("../../components/AdminHeader/index.php");
 </div>
 
 <script>
-    // Hide alert message after 5 seconds automatically
+    // Hide alert message after 5 seconds
     const serverMessage = document.getElementById("server_msg");
     if (serverMessage) {
         setTimeout(() => {
@@ -81,4 +85,19 @@ require("../../components/AdminHeader/index.php");
             bsAlert.close();
         }, 5000);
     }
+
+    // Bootstrap 5 form validation (vanilla JS)
+    (() => {
+        'use strict';
+        const forms = document.querySelectorAll('.needs-validation');
+        Array.from(forms).forEach(form => {
+            form.addEventListener('submit', event => {
+                if (!form.checkValidity()) {
+                    event.preventDefault();
+                    event.stopPropagation();
+                }
+                form.classList.add('was-validated');
+            }, false);
+        });
+    })();
 </script>

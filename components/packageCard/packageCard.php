@@ -60,6 +60,11 @@
         background-color: #f642ff;
         /* the main color  */
     }
+
+    a {
+    color: black;
+    }
+
 </style>
 
 <?php
@@ -87,8 +92,10 @@ function PackageCart($header, $l1, $l2, $l3, $catName, $info, $price)
         </div>
 
         <div class='d-flex justify-content-center'>
-            <button class='btn__select'>Book Now
-                <i class='fas fa-camera-retro'></i>
+            <button class='btn__select'>Book Now 
+                <a href='/hnd/public/book-your-day/index.php'> 
+                    <i class='fas fa-camera-retro'></i>
+                </a>
             </button>
         </div>
     </div>

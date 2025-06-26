@@ -89,3 +89,10 @@ while( $index <= $length)
 
     $index ++;
 }
+
+$message_list = [
+            "status" => "success",
+            "message" => "Delete Success"
+        ];
+setcookie("img-created", true, time()+2,"/");
+echo json_encode($message_list);

@@ -13,7 +13,9 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f9f9f9;
+      
+            background-image: linear-gradient(to top, #ff0844 0%, #ffb199 100%);
+
         }
         .hero {
             background: url('./malcom-photo.jpg') center/cover no-repeat;
@@ -32,7 +34,9 @@
         }
         .bio {
             padding: 40px 20px;
-            background-color: #fff;
+            
+           
+       
         }
         .gallery img {
             width: 100%;

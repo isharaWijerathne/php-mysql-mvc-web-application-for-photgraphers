@@ -7,6 +7,28 @@ require("../../components/AdminHeader/index.php");
 ?>
 
 <h3 class="text-center text-primary mb-4 fw-bold">Create New Pic Album</h3>
+<div class="container-fluid">
+  <?php 
+        if(isset($_COOKIE['img-created']) && $_COOKIE['img-created'] == true){
+            echo '<div class="alert alert-success alert-dismissible fade show" id="server_msg" role="alert">
+                    Picture Album Created Successfully
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>';
+        }
+  ?>  
+</div>
+
+
+<script>
+    const serverMessageWindow = document.getElementById("server_msg");
+    if (serverMessageWindow) {
+        setTimeout(() => {
+            serverMessageWindow.style.display = "none";
+            console.log("Server message hidden");
+        }, 5000);
+    }
+</script>
+
 
 <div class="container-fluid">
   <div class="row">
