@@ -1,4 +1,12 @@
-<?php 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Album List</title>
+</head>
+<body>
+    <?php 
 //cdn
 require("../../include/cdn.php");
 
@@ -111,3 +119,6 @@ require("../../components/AdminHeader/index.php");
 </div>
 <div id="msg__box__div"></div>
 <script type="module" src="view-album-list.js"></script>
+
+</body>
+</html>

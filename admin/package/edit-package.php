@@ -1,4 +1,12 @@
-<?php
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Package</title>
+</head>
+<body>
+    <?php
 // CDN
 require("../../include/cdn.php");
 
@@ -78,3 +86,6 @@ require("../../controllers/picture_category_control/get_active_category.php");
         </div>
     </div>
 </div>
+
+</body>
+</html>

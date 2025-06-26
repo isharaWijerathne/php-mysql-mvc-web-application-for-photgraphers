@@ -1,4 +1,12 @@
-<?php
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Package</title>
+</head>
+<body>
+    <?php
 // CDN
 require("../../include/cdn.php");
 // Admin Header
@@ -101,3 +109,6 @@ require("../../components/AdminHeader/index.php");
         });
     })();
 </script>
+
+</body>
+</html>
