@@ -20,6 +20,7 @@ require("../../components/AdminHeader/index.php");
 <div class="container">
 
     <?php 
+    //  Nothification
         if(isset($_COOKIE['create_categort_success']) && $_COOKIE['create_categort_success'] == true){
             echo '<div class="alert alert-success alert-dismissible fade show" id="server_msg" role="alert">
                     Product Category Create Successful

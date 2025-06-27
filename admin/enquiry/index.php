@@ -18,8 +18,10 @@
 
     <div class="container mt-5">
         <h3 class="text-center mb-4 fw-bold text-primary">My Enquiry</h3>
-
-        <?php if (isset($_COOKIE['delete__enquiry_success']) && $_COOKIE['delete__enquiry_success'] == true): ?>
+        
+        <?php 
+        // Nothification
+        if (isset($_COOKIE['delete__enquiry_success']) && $_COOKIE['delete__enquiry_success'] == true): ?>
             <div class="alert alert-success alert-dismissible fade show" role="alert" id="server_msg">
                 <i class="bi bi-check-circle-fill me-2"></i>
                 Enquiry deleted successfully!
@@ -43,6 +45,7 @@
                 </thead>
                 <tbody>
                     <?php
+                    //Controller -> get_enquiry
                     require("../../controllers/enquiry_control/get_enquiry.php");
                     while ($result = mysqli_fetch_assoc($get_enquiry_result)) {
                         echo "<tr>
@@ -71,6 +74,7 @@
     </div>
 
     <script>
+        //Hide nothification
         const serverMessage = document.getElementById("server_msg");
         if (serverMessage) {
             setTimeout(() => {

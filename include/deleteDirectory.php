@@ -1,14 +1,13 @@
 <?php 
 function deleteDirectory($dir) {
     if (!file_exists($dir)) {
-        return true; // Nothing to delete
+        return true;
     }
 
     if (!is_dir($dir)) {
-        return unlink($dir); // Delete file
+        return unlink($dir); 
     }
 
-    // Scan and loop through directory contents
     foreach (scandir($dir) as $item) {
         if ($item == '.' || $item == '..') {
             continue;
@@ -29,6 +28,6 @@ function deleteDirectory($dir) {
         }
     }
 
-    // Remove the empty directory itself
+    
     return rmdir($dir);
 }

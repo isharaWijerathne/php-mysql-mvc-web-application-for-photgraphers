@@ -18,6 +18,7 @@ require("../../components/AdminHeader/index.php");
 
 <div class="container mb-4">
     <?php 
+        //Nothification
         if(isset($_COOKIE['active_album_pic_success']) && $_COOKIE['active_album_pic_success'] == true){
             echo '<div class="alert alert-success alert-dismissible fade show" id="server_msg" role="alert">
                     Picture Album Activated Successfully
@@ -80,6 +81,7 @@ require("../../components/AdminHeader/index.php");
             </thead>
             <tbody>
                 <?php 
+                //Contoller ->get_view_album
                 require("../../controllers/picture_album_control/get_view_album.php");
 
                 while ($result = mysqli_fetch_assoc($get_album_details_result)) {

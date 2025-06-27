@@ -14,15 +14,17 @@
 </style>
 <body>
     <?php
+    //Cdn
     require("../../include/cdn.php");
+    //Main header
     require("../../components/mainHeader/mainHeader.php");
-
+    //Main fotter
     require("../../components/mainFotter/mainFotter.php");
 
-    // This import will provide AlbumCart function
+    // AlbumCart function
     require("../../components/AlbumCart/AlbumCart.php");
 
-    // This import provides get_album_details & get_pic_details
+    // Controller get_pic_details
     require("../../controllers/picture_album_control/get_picAlbum_for_gallery_cart.php");
 
     $data_for_pic_cart = [];
@@ -46,7 +48,7 @@
         $first++;
     }
 
-    // ===== Pagination Logic =====
+    // Pagination logic
     $items_per_page = 4;
     $total_items = count($data_for_pic_cart);
     $total_pages = ceil($total_items / $items_per_page);
@@ -57,7 +59,7 @@
     $start_index = ($current_page - 1) * $items_per_page;
     $data_for_pic_cart_paginated = array_slice($data_for_pic_cart, $start_index, $items_per_page);
 
-    // ===== Display Albums =====
+    // Album show
     echo "<div class='container-fluid'>
             <div class='row'>";
 
@@ -78,7 +80,7 @@
 
     echo "</div></div>";
 
-    // ===== Pagination Controls =====
+    // Pagination Controls
     echo "<div class='d-flex justify-content-center mt-4'>
             <nav>
                 <ul class='pagination'>";

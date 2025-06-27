@@ -45,8 +45,7 @@
 
     .ribbon {
         --f: .5em;
-        /* control the folded part */
-
+     
         position: relative;
         top: 0;
         left: 0;
@@ -58,7 +57,6 @@
         transform: translate(calc((cos(45deg) - 1)*100%), -100%) rotate(-45deg);
         transform-origin: 100% 100%;
         background-color: #f642ff;
-        /* the main color  */
     }
 
     a {

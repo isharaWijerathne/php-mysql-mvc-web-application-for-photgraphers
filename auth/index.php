@@ -7,7 +7,7 @@
 </head>
 <body>
     <?php require("../include/cdn.php") ; 
-    
+        //Sesstion 
         if (session_status() === PHP_SESSION_NONE) {
                 session_start();
             }

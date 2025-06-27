@@ -9,12 +9,13 @@
 
 <body>
   <?php
+  //Cdn
   require("../../include/cdn.php");
+  //Main header
   require("../../components/mainHeader/mainHeader.php");
-
+  //Main fotter
   require("../../components/mainFotter/mainFotter.php");
-
-
+  //get_pic_for_show
   require("../../controllers/picture_album_control/get_pic_for_show.php");
 
   
@@ -44,9 +45,11 @@
     <div class="carousel-inner bg-prim-ary">
 
       <?php
-      $isFirst = true; // flag for first slide
+      $isFirst = true; 
       while ($result = mysqli_fetch_assoc($get_picture_result)) {
         $activeClass = $isFirst ? 'active' : '';
+
+        //Boostrap slider
         echo "
                 <div class='carousel-item $activeClass' data-bs-interval='2000'>
                     <div class='d-flex justify-content-center' >
@@ -58,7 +61,7 @@
                     </div>
                 </div>
             ";
-        $isFirst = false; // reset after first iteration
+        $isFirst = false;
       }
       ?>
 

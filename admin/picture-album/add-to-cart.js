@@ -39,6 +39,7 @@ function removeCartItem(index) {
   createTable();
 }
 
+//Create table
 function createTable() {
   var table = `<table class="table">
     <tr>
@@ -77,6 +78,7 @@ function createTable() {
   document.getElementById("upload__btn").onclick = uploadData;
 }
 
+//Form clear
 function clearForm() {
   picTitle.value = "";
   photographerName.value = "";
@@ -84,6 +86,7 @@ function clearForm() {
   picLocation.value = "";
 }
 
+//Btn event
 document.getElementById("btn").onclick = (event) => {
   event.preventDefault();
   const cartItem = {

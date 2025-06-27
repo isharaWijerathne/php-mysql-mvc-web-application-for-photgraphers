@@ -1,6 +1,9 @@
 <?php
+//Cdn
 require("../../include/cdn.php");
+//Main header
 require("../../components/mainHeader/mainHeader.php");
+//Mian Fotter
 require("../../components/mainFotter/mainFotter.php");
 ?>
 
@@ -51,12 +54,12 @@ require("../../components/mainFotter/mainFotter.php");
             border-color: #000 !important;
         }
 
-        /* Optional: black border around event elements */
+        
         .fc-event {
             border: 1px solid #000 !important;
         }
 
-        /* Optional: selection highlight */
+      
         .fc .fc-highlight {
             background: rgba(0, 0, 0, 0.2) !important;
         }
@@ -69,7 +72,9 @@ require("../../components/mainFotter/mainFotter.php");
 
         <h3 class="text-center  mb-4 ">Book your days</h3>
 
-        <?php if (isset($_COOKIE['create__enquiry_success']) && $_COOKIE['create__enquiry_success'] == true): ?>
+        <?php 
+        //Nothification
+        if (isset($_COOKIE['create__enquiry_success']) && $_COOKIE['create__enquiry_success'] == true): ?>
             <div class="alert alert-success alert-dismissible fade show" role="alert" id="server_msg">
                 <i class="bi bi-check-circle-fill me-2"></i>
                 Booking created successfully!
@@ -118,7 +123,8 @@ require("../../components/mainFotter/mainFotter.php");
                             <label for="selectedCat" class="form-label fw-semibold">Package </label>
                             <select id="selectedCat" class="form-select form-select-lg" name="selected_package_">
                                 <option value="" selected>Choose category...</option>
-                                <?php // controllers\package_control\get_package_for_booking.php
+                                <?php 
+                                //Controller -> get_package_for_booking
                                 require("../../controllers/package_control/get_package_for_booking.php");
                                 while ($result = mysqli_fetch_assoc($get_package_query_for_booking)) {
                                     echo "<option value='{$result['packageID']}'> {$result['categoryName']} {$result['pcakageHeader']} {$result['price']}  </option>";
@@ -145,7 +151,7 @@ require("../../components/mainFotter/mainFotter.php");
         </div>
     </div>
 
-    <!-- FullCalendar and Bootstrap JS -->
+    <!-- FullCalendar -->
     <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.17/index.global.min.js'></script>
 
     <script>
@@ -188,7 +194,7 @@ require("../../components/mainFotter/mainFotter.php");
             });
         })();
 
-        // Hide alert message after 5 seconds
+        // Hide nothification
         const serverMessage = document.getElementById("server_msg");
         if (serverMessage) {
             setTimeout(() => {

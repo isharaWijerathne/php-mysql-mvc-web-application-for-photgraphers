@@ -5,9 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Malcolm Lismore Photography</title>
      <?php
+        //Cdn
         require("../include/cdn.php");
+        //Main Header
         require("../components/mainHeader/mainHeader.php");
-
+        //Main Fotter
         require("../components/mainFotter/mainFotter.php");
     ?>
     <style>
@@ -48,14 +50,14 @@
 </head>
 <body>
 
-    <!-- Hero Section -->
+    
     <div class="hero">
         <div class="hero-overlay">
             Malcolm Lismore Photography
         </div>
     </div>
 
-    <!-- Bio Section -->
+  
     <section class="bio text-center">
         <div class="container">
             <h2 class="mb-3">About Malcolm</h2>

@@ -9,11 +9,15 @@
 
 <body>
     <?php
+    //Cdn
     require("../../include/cdn.php");
+
+    //Admin header
     require("../../components/AdminHeader/index.php");
     ?>
 
     <?php {
+        //Controller -> get_single_album
         require("../../controllers/picture_album_control/get_single_album.php");
     }
     ?>
@@ -48,6 +52,7 @@
    
     <div class="container-fluid">
          <?php 
+         // Nothification
         if(isset($_COOKIE['active_pic_success']) && $_COOKIE['active_pic_success'] == true){
             echo '<div class="alert alert-success alert-dismissible fade show" id="server_msg" role="alert">
                     Picture activate Successful

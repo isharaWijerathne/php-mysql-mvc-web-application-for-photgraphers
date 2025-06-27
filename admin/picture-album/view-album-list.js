@@ -1,6 +1,6 @@
 import { createMessageBox } from "../../message_box.js";
 
-// Wait for the DOM to fully load
+
 document.addEventListener("DOMContentLoaded", function () {
     // Create the message box
     createMessageBox("msg_model", "Warning", "This Delete will affect your data", "ok_btn_model");

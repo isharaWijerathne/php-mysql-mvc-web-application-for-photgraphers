@@ -19,7 +19,9 @@
     <div class="container mt-5">
         <h3 class="text-center mb-4 fw-bold text-primary">Package List</h3>
 
-        <?php if (isset($_COOKIE['package_edit_success']) && $_COOKIE['package_edit_success'] == true): ?>
+        <?php 
+        //Nothification
+        if (isset($_COOKIE['package_edit_success']) && $_COOKIE['package_edit_success'] == true): ?>
             <div class="alert alert-success alert-dismissible fade show" id="server_msg" role="alert">
                 <i class="bi bi-check-circle-fill me-2"></i>
                 Package Edited Successfully!
@@ -27,7 +29,9 @@
             </div>
         <?php endif; ?>
 
-        <?php if (isset($_COOKIE['delete_package_success']) && $_COOKIE['delete_package_success'] == true): ?>
+        <?php
+        //Nothification
+         if (isset($_COOKIE['delete_package_success']) && $_COOKIE['delete_package_success'] == true): ?>
             <div class="alert alert-success alert-dismissible fade show" id="server_msg" role="alert">
                 <i class="bi bi-check-circle-fill me-2"></i>
                 Package Deleted Successfully!
@@ -54,6 +58,7 @@
                 </thead>
                 <tbody>
                     <?php
+                    //Controller -> get_package
                     require("../../controllers/package_control/get_package.php");
 
                     while ($result = mysqli_fetch_assoc($get_package_result)) {
@@ -85,17 +90,6 @@
             </table>
         </div>
     </div>
-
-    <script>
-        // Auto hide alert after 5 seconds
-        // const serverMessage = document.getElementById("server_msg");
-        // if (serverMessage) {
-        //     setTimeout(() => {
-        //         const bsAlert = new bootstrap.Alert(serverMessage);
-        //         bsAlert.close();
-        //     }, 5000);
-        // }
-    </script>
     <div id="msg__box__div"></div>
     <script type="module" src="delete-package.js"></script>
 </body>

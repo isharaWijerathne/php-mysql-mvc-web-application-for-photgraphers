@@ -9,9 +9,11 @@
 
 <body>
     <?php
+    //Cdn
     require("../../include/cdn.php");
+    //Header
     require("../../components/mainHeader/mainHeader.php");
-
+    //Fotter
     require("../../components/mainFotter/mainFotter.php");
     ?>
 
@@ -29,9 +31,10 @@
 
 
             <?php
+            //Controller -> get_package
             require("../../controllers/package_control/get_package.php");
 
-            //Get Card Componet
+            //Componet -> PackageCard
             require("../../components/packageCard/packageCard.php");
 
             while ($result = mysqli_fetch_assoc($get_package_result)) {

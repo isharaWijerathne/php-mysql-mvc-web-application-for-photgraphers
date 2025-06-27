@@ -9,7 +9,9 @@
 
 <body>
     <?php
+    //Cdn
     require("../../include/cdn.php");
+    //Admin header
     require("../../components/AdminHeader/index.php");
 
     ?>
@@ -21,6 +23,7 @@
     <div class="container">
 
         <?php
+        //Nothification
         if (isset($_COOKIE['user_created']) && $_COOKIE['user_created'] == true) {
             echo '<div class="alert alert-success alert-dismissible fade show" id="server_msg" role="alert">
                     User Created
@@ -51,7 +54,7 @@
                 <a href="/hnd/controllers/LogOutController.php" type="submit" class="btn btn-danger">Log out</a>
          </div>
     <script>
-         // Hide alert message after 5 seconds
+         // Hide nothification
         const serverMessage = document.getElementById("server_msg");
         if (serverMessage) {
             setTimeout(() => {

@@ -19,6 +19,7 @@
   <h3 class="text-center text-primary mb-4 fw-bold">Create New Pic Album</h3>
   <div class="container-fluid">
     <?php
+    //Nothification
     if (isset($_COOKIE['img-created']) && $_COOKIE['img-created'] == true) {
       echo '<div class="alert alert-success alert-dismissible fade show" id="server_msg" role="alert">
                     Picture Album Created Successfully
@@ -30,6 +31,7 @@
 
 
   <script>
+    //Hide nothification
     const serverMessageWindow = document.getElementById("server_msg");
     if (serverMessageWindow) {
       setTimeout(() => {
@@ -58,6 +60,7 @@
               <option value="" selected>Choose...</option>
 
               <?php
+              //Controller -> get_active_category
               require("../../controllers/picture_category_control/get_active_category.php");
               while ($result = mysqli_fetch_assoc($get_picture_category_active_result)) {
                 echo "<option value='{$result['picCategoryId']}'> {$result['categoryName']} </option>";

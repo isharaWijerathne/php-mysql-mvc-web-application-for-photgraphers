@@ -29,6 +29,7 @@
                 </thead>
                 <tbody>
                     <?php
+                    // Controller -> get_enquiry_date
                     require("../../controllers/enquiry_control/get_enquiry_date.php");
 
                     while ($result = mysqli_fetch_assoc($eqnuiry_result)) {
