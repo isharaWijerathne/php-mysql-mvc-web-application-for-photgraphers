@@ -6,10 +6,24 @@
     <title>Auth</title>
 </head>
 <body>
-    <?php require("../include/cdn.php") ; ?>
+    <?php require("../include/cdn.php") ; 
+    
+        if (session_status() === PHP_SESSION_NONE) {
+                session_start();
+            }
+
+        if (isset($_SESSION['auth'])) {
+            header('Location: /hnd/admin/dashboard/index.php');
+            exit;
+        }
+
+    ?>
+
+    
+
     <div class="container" >
         <div class="row" >
-            <div class="col-6 offset-3">
+            <div class="col-6 col-sm-12  offset-sm-0 offset-3">
             <form class="border rounded m-5 p-4"> 
                 <div class="mb-3">
                     <label for="exampleInputEmail1" class="form-label">Email address</label>

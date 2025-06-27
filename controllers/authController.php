@@ -1,6 +1,7 @@
 <?php 
 session_start();
 
+require("../include/dbconnect.php");
 
 $email_from_user = $_POST["email"];
 $password_from_user = $_POST["password"];
@@ -8,7 +9,13 @@ $password_from_user = $_POST["password"];
 $result = "";
 
 
-if($email_from_user == "admin@test.com" && $password_from_user == "12345")
+$get_auth_query = " SELECT * FROM `tblauth` WHERE username = '${email_from_user}'";
+$get_auth_result = mysqli_query($connection,$get_auth_query);
+$result_assc_array =  $get_auth_result->fetch_assoc(); 
+$db_hased_password= $result_assc_array["password"];
+
+
+if(password_verify($password_from_user,$db_hased_password))
 {
    $result = "done";
    $_SESSION['auth'] = 'This is auth sesstion';

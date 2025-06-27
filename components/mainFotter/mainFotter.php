@@ -9,6 +9,8 @@
             <p class="mt-3">Malcolmphotography.com</p>
         </div>
         <div>
-
+            <a href="/hnd/auth/index.php">
+                <i class="fa-solid fa-user-tie" style="color: #ffffff;"></i>
+            </a>
         </div>
 </footer>

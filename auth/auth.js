@@ -19,6 +19,7 @@ $(document).ready(function()
            
            $.post("../controllers/authController.php",post_data, function(data, status)
             {
+                console.log(data);
                 
                 var result = JSON.parse(data);
                 if(result.message === "fail")   
